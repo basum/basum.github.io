@@ -1,0 +1,76 @@
+.arjs-loader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arjs-loader div {
+  text-align: center;
+  font-size: 1.25em;
+  color: white;
+}
+
+.submit-area-1{
+  width: 50%;
+  height: 50%;
+  margin:auto;
+  background-color: lightgreen;
+  padding: 100px;
+}
+.submit-area{
+  display: flex;
+  flex-direction: column;
+}
+.submit-area input{
+  margin-bottom: 3px;
+}
+label{
+  display: block;
+}
+.scores{
+  display: flex; 
+  flex-direction:row;
+  align-content: space-between;
+}
+.scores div{
+  flex: 1;
+}
+.start-menu{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.start-menu a{
+  margin: 0 calc( (100vw - 500px) / 2 );
+  display: block;
+  width: fit-content;
+  height: fit-content;
+}
+
+i {
+  background-size: 20px 30px;
+}
+#points-and-timer {
+  background-color: #d86800;
+  padding: .75em;
+}
+
+.game, .infobox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DFDDBF;
+  color: black;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+}

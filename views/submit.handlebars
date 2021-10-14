@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<div class="submit-area-1">
+  <div class="congrats-label">
+    Congratulations Your Score Is : {{#if score}} {{score}} {{/if}}
+  </div>
+  <br />
+  <form action="/submit" method="POST">
+    <div class="submit-area">
+      <input name="email" type="text" placeholder="E-mail" />
+      <input name="fullname" type="text" placeholder="Full Name" />
+      <input name="score" required style="display:none;" type="number" {{#if score}} value="{{score}}" {{/if}} />
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  <br />
+  <br />
+  <br />
+  <label>Other People's scores</label>
+  <br />
+  <label style="display: flex; flex-direction: row; align-content: space-between;">
+    <div class="values" style="flex: 12;">Email</div>
+    <div class="values" style="flex: 1;">|</div>
+    <div class="values" style="flex: 8;">Name</div>
+    <div class="values" style="flex: 1;">|</div>
+    <div class="values" style="flex: 4;">Score</div>
+  </label>
+  <br/>
+  <div class="old_scores">
+    {{#each scores}}
+    <li class="scores">
+      <div class="values" style="flex: 12;">{{email}}</div>
+      <div>:</div>
+      <div class="values" style="flex: 8;">{{fullname}}</div>
+      <div>:</div>
+      <div class="values" style="flex: 4;">{{score}}</div>
+    </li>
+    {{/each}}
+  </div>
+</div>

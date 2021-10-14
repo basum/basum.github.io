@@ -1,0 +1,58 @@
+<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://unpkg.com/aframe-aabb-collider-component@3.1.0/dist/aframe-aabb-collider-component.min.js"></script>
+
+<script src="/javascripts/game.js"></script>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<div
+    style='font-size:x-large; top: 0px; width:100%; text-align: center; z-index: 1; color:#000000; background-color: #DFDDBF; padding-top: .45rem;'>
+    <img src="/images/image.png" alt="WURMKISTE" width="150" height="90">
+    <label id="points_and_timer"></label>
+</div>
+
+<a-scene cursor="rayOrigin: mouse" embedded
+    arjs='patternRatio: 0.9; trackingMethod: best; maxDetectionRate: 120; debugUIEnabled: false;'>
+
+    <a-assets timeout="1000">
+        <img id="cursorr" src="/images/cursor_updated.png">
+        <a-asset-item id="Apple-obj" src="/objects/apple_updated.obj"></a-asset-item preload="auto">
+        <a-asset-item id="Apple-mtl" src="/objects/apple_updated.mtl"></a-asset-item>
+        <a-asset-item id="Banana-obj" src="/objects/banana_updated.obj"></a-asset-item preload="auto">
+        <a-asset-item id="Banana-mtl" src="/objects/banana_updated.mtl"></a-asset-item>
+        <a-asset-item id="Grapes-obj" src="/objects/grapes_updated.obj"></a-asset-item preload="auto">
+        <a-asset-item id="Grapes-mtl" src="/objects/grapes_updated.mtl"></a-asset-item>
+        <a-asset-item id="WaterMellon-obj" src="/objects/watermellon.obj"></a-asset-item preload="auto">
+        <a-asset-item id="WaterMellon-mtl" src="/objects/watermellon.mtl"></a-asset-item>
+        <a-asset-item id="Bottle-obj" src="/objects/Bottle.obj"></a-asset-item preload="auto">
+        <a-asset-item id="Bottle-mtl" src="/objects/Bottle.mtl"></a-asset-item>
+        <a-asset-item id="Wurm-obj" src="/objects/blackhole_updated.obj"></a-asset-item preload="auto">
+        <a-asset-item id="Wurm-mtl" src="/objects/blackhole_updated.mtl"></a-asset-item>
+    </a-assets>
+
+    <a-marker type="pattern" preset="custom" url="/images/pattern-ar-image.patt">
+        <a-obj-model autoplay aabb-collider="objects; .box" class="apple" src="#Apple-obj" mtl="#Apple-mtl" scale="2 2 2" rotation="90 0 9" position="0 0 0">
+        </a-obj-model>
+        <a-obj-model autoplay aabb-collider="objects; .box" class="banana" src="#Banana-obj" mtl="#Banana-mtl" scale="2.5 2.5 2.5" rotation="90 0 9" position="2 0 0">
+        </a-obj-model>
+        <a-obj-model autoplay aabb-collider="objects; .box" class="grapes" src="#Grapes-obj" mtl="#Grapes-mtl" scale="3 3 3" rotation="90 0 9"
+            position="0 0 -2" >
+        </a-obj-model>
+        <a-obj-model autoplay aabb-collider="objects; .box" class="watermelon" src="#WaterMellon-obj" mtl="#WaterMellon-mtl" scale="1.5 1.5 1.5" rotation="0 0 0"
+            position="0 0 2" >
+        </a-obj-model>
+        <a-obj-model autoplay aabb-collider="objects; .box" class="plastic" src="#Bottle-obj" mtl="#Bottle-mtl" scale="2 2 2" rotation="0 0 0"
+            position="-2 0 0">
+        </a-obj-model>
+        <a-obj-model class="wurm" src="#Wurm-obj" mtl="#Wurm-mtl" scale="6 6 6" position="0 0 0" rotation="0 0 0">
+        </a-obj-model>
+    </a-marker>
+
+    <a-entity id="rig">
+        <a-entity camera>
+            <a-cursor geometry="primitive: dodecahedron; color: red; radius: 2"  id="cursor">
+            <a-image src="#cursorr" scale="0.1 0.1 0.1" raycaster position="0 0 0"></a-image>
+        </a-entity>
+    </a-entity>
+
+</a-scene>

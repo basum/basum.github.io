@@ -1,20 +1,21 @@
-# AFrame_AR_Multimarkers
-WebAR Multi-markers using AFrame and AR.js.
+# NOVOHEAD AR Project
 
-A simple multimarker example using AFrame (0.9.2) and AR.js (2.0.8). 
-Live example here: https://ucl-casa-ce.github.io/AFrame_AR_Multimarkers/ </br>
-Markers are in the MarkerPng folder.</br>
+This is the main repository of the NOVOHEAD AR Project.
 
-The browser will ask (the first time) to access the camera feed, if available. On iOS check if Camera & Microphone Access is On under Settings -> Safari -> Privacy & Security section.
+## Deploy the Project
+Deploying this project requires Node.js and NPM. Make sure you have them first.
 
-**How it works?** </br>
-multiMarkersName.js create the <a-marker> tags using the PATT files in the resource folder. Each marker displays a text with its ID.
+To deploy the project, you need to write this commands in your server OS's command-line program. 
+(cmd.exe for Windows, Terminal for MacOS, GNOME Terminal on Ubuntu)
 
-![ ](MultiMarkers.gif)
-  
-  
-  
-  ---------
-  AFrame https://aframe.io/ https://github.com/aframevr/aframe/ <br/>
-  AR.js https://github.com/jeromeetienne/AR.js
- 
+```
+npm install
+npm run start
+```
+
+Your application will be deployed on the server's ip port 3000. You can also use 3rd party project deploying solutions like [Heroku](https://herokuapp.com).
+
+
+### Thank you for choosing our product!
+
+As Novohead, we are grateful for you choosing our product. If you want to learn more of our products, you can also visit <novohead.com>.

@@ -1,0 +1,42 @@
+<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+<script src="/javascripts/infobox.js"></script>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<a-scene cursor="rayOrigin: mouse" embedded
+    arjs='patternRatio: 0.9; trackingMethod: best; maxDetectionRate: 120; debugUIEnabled: false;'>
+
+    <a-assets timeout="1000">
+        <img id="logo" src="/images/arjs-logo.png">
+    </a-assets>
+
+    <a-marker type="pattern" preset="custom" url="/images/pattern-ar-image.patt">
+
+        <a-text id="top_text" height="0.2" value="Top View" position=" 0 1.5 0" rotation="270 0 0" color="#AAAAAA" geometry="primitive:plane" align="center" click-to-close>
+        </a-text>
+
+        <a-text id="front_text" value="Front View" position=" 0 0.5 1" rotation="0 0 0" color="#000000" geometry="primitive:plane" align="center" click-to-close>
+        </a-text>
+        <a-text id="right_text" value="Right View" position=" 1 0.5 0" rotation="0 90 0" color="#0F0" geometry="primitive:plane" align="center" click-to-close>
+        </a-text>
+        <a-text id="back_text" value="Back View" position=" 0 0.5 -1" rotation="0 180 0" color="#0000FF" geometry="primitive:plane" align="center" click-to-close>
+        </a-text>
+
+        <a-text id="left_text" value="Left View " position="-1 0.5 0" rotation="0 270 0" color="#FF0000" geometry="primitive:plane" align="center" click-to-close>
+        </a-text>
+
+        <a-sphere id="left_" color="black" position="-0.9 1 0" radius=".1" click-to-open></a-sphere>
+        <a-sphere id="right_" color="black" position="0.9 1 0" radius=".1" click-to-open></a-sphere>
+        <a-sphere id="front_" color="black" position="0 1 0.9" radius=".1" click-to-open></a-sphere>
+        <a-sphere id="back_" color="black" position="0 1 -0.9" radius=".1" click-to-open></a-sphere>
+        <a-sphere id="top_" color="black" position="0 1 0" radius=".1" click-to-open></a-sphere>
+    </a-marker>
+
+    <a-entity id="rig">
+        <a-entity camera>
+            <a-cursor id="cursor" raycaster fuse="false"></a-cursor>
+        </a-entity>
+    </a-entity>
+
+</a-scene>
